@@ -1,3 +1,8 @@
+#Write a Python program that can answer any “Yes” or “No” question with a different fortune each time it executes.
+#The output of the program will have the following format:
+    #[Name] asks: [Question]
+    #Magic 8-Ball’s answer: [Answer]
+
 import random
 import sys
 
