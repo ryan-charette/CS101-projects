@@ -4,15 +4,12 @@
 
 import ast
 
-gradebook = []
-
 subject_input = input("Enter the name of each class you are taking separated by commas: ")
 subjects = subject_input.split(",")
 grades_input = input("Enter your current grades separated by commas: ")
 grades = grades_input.split(",")
 
-for item in range(len(subjects)):
-    gradebook.append([subjects[item], grades[item]])
+gradebook = list(zip(subjects, grades))
 
 while True:
     selection = input("""Update gradebook using the following options:
