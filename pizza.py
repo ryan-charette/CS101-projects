@@ -16,7 +16,7 @@ for i in range(len(pizzas)):
   pizzas_with_prices.append([prices[i], pizzas[i]])
 
 for i in range(len(pizzas)):
-    quantity_price_pizza.append([2] + pizzas_with_prices[i])
+    quantity_price_pizza.append([8] + pizzas_with_prices[i])
 
 def buy_pizza():
     global todays_revenue
