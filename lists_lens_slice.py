@@ -6,18 +6,28 @@ pizzas_with_prices = []
 quantity_price_pizza = []
 best_sellers = []
 
+#Create a list of the kinds of pizzas you sell
+#Create a list of the prices of each pizza slice
 pizzas = ["cheese", "pepperoni", "meat lovers", "supreme", "hawaiian", "margherita", "veggie"]
 prices = [2.0, 2.5, 3.0, 3.0, 3.5, 2.5, 3.0]
 
+#Your boss wants you to do some research on slices under $3
+#Count the number of occurence of 2.0 and 2.5 in the prices list
+#Find the length of the toppings list
 num_cheap_slices = prices.count(2.0) + prices.count(2.5)
 num_pizzas = len(pizzas)
 
+
+#Use the existing data about the pizza toppings and prices to create a new two-dimensional list.
 for i in range(len(pizzas)):
   pizzas_with_prices.append([prices[i], pizzas[i]])
 
+#Create a list that keeps track of the number of slices remaining of each kind of pizza
+#Initialize the number of slices to 8 of each kind of pizza
 for i in range(len(pizzas)):
     quantity_price_pizza.append([8] + pizzas_with_prices[i])
 
+#Write a function to keep track of the pizzas sold
 def buy_pizza():
     global todays_revenue
     input_checker = 0
@@ -33,7 +43,10 @@ def buy_pizza():
                 best_sellers.append(sold_out)
         elif input_checker == 0 and i == len(quantity_price_pizza) - 1:
             print("Invalid input")
-    
+
+#Print a string using num_pizzas and num_cheap_slices
+#Print a menu using pizzas_with_prices
+#When done, print a list of the top selling pizzzas for the day
 def main():
     global best_sellers
 

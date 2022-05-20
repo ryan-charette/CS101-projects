@@ -1,19 +1,22 @@
 #You are a student and you are trying to organize your subjects and grades using Python. 
 #Let’s explore what we’ve learned about lists to organize your subjects and scores.
-#Use lists and 2D-lists, .append(), .remove(), list addition, and be able to modify list items
 
 import ast
 
 gradebook = []
 
+#Create a list called subjects of the classes you are taking
+#Create a list called grades of your scores
 subject_input = input("Enter the name of each class you are taking separated by commas: ")
 subjects = subject_input.split(",")
 grades_input = input("Enter your current grades separated by commas: ")
 grades = grades_input.split(",")
 
+#Create a two-dimensional list to combine subjects and grades
 for item in range(len(subjects)):
     gradebook.append([subjects[item], grades[item]])
 
+#Be able to add new grades, modify grades, pass/fail classes, and combine multiple gradebooks
 while True:
     selection = input("""Update gradebook using the following options:
     [1] Change grade

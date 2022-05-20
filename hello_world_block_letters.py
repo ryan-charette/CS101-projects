@@ -1,4 +1,4 @@
-#Write a Python program called initials.py that displays the initials of your name in block letters.
+#Write a Python program that displays the initials of your name in block letters.
 #Each block letter should be 7x5 and formed by the letter itself.
 #Write two comments with:
     #Your first and last name.
