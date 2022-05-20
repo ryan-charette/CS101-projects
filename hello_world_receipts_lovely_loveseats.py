@@ -26,9 +26,9 @@ def Checkout():
   print("Items:", end ="")
   print(itemization)
   print("""
-Subtotal: $""" + str(subtotal))
-  print("Tax 8.8%: $" + str(tax))
-  print("Total: $" + str(total))
+Subtotal: $""" + '{:.2f}'.format(subtotal))
+  print("Tax 8.8%: $" + '{:.2f}'.format(tax))
+  print("Total: $" + '{:.2f}'.format(total))
 
 lovely_loveseat = Furniture("""
 Lovely Loveseat. Tufted polyester blend on wood. 32 inches high x 40 inches wide x 30 inches deep. Red or white.""", 254.00)
