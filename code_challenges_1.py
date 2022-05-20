@@ -50,7 +50,7 @@ def not_sum_to_ten(num1, num2):
     else:
         return False
 
-#Difficult Python Code Challenges Involving Control Flow
+#Difficult Python Code Challenges involving Control Flow
 
 #1. In Range
 #Create a function named in_range() that has three parameters named num, lower, and upper.
@@ -206,7 +206,7 @@ def middle_element(lst):
     else:
         return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2
 
-#Python Code Challenges involving loops
+#Python Code Challenges involving Loops
 
 #1. Divisible by Ten
 #Create a function named divisible_by_ten() that takes a list of numbers named nums as a parameter.
@@ -316,4 +316,87 @@ def reversed_list(lst1, lst2):
     else:
         return False
 
-#Python Code Challenges involving functions
+#Python Code Challenges involving Functions
+
+#1. Tenth Power
+#Write a function named tenth_power() that has one parameter named num.
+#The function should return num raised to the 10th power.
+
+def tenth_power(num):
+    return num ** 10
+
+#2. Square Root
+#Write a function named square_root() that has one parameter named num.
+#Use exponents (**) to return the square root of num.
+
+def square_root(num):
+    return num ** 0.5
+
+#3. Win Percentage
+#Create a function called win_percentage() that takes two parameters named wins and losses.
+#This function should return out the total percentage of games won by a team based on these two numbers.
+
+def win_percentage(wins, losses):
+    return 100 * wins / (wins + losses)
+
+#4. Average
+#Write a function named average() that has two parameters named num1 and num2.
+#The function should return the average of these two numbers.
+
+def average(num1, num2):
+    return (num1 + num2) / 2
+
+#5. Remainder
+#Write a function named remainder() that has two parameters named num1 and num2.
+#The function should return the remainder of twice num1 divided by half of num2.
+
+def remainder(num1, num2):
+    return num1 * 2 % (num2 / 2)
+
+#Difficult Python Code Challenges involving Functions
+
+#1. First Three Multiples
+#Write a function named first_three_multiples() that has one parameter named num.
+#This function should print the first three multiples of num. Then, it should return the third multiple.
+#For example, first_three_multiples(7) should print 7, 14, and 21 on three different lines, and return 21.
+
+def first_three_multiples(num):
+    print(num)
+    print(num * 2)
+    print(num * 3)
+    return num * 3
+
+#2. Tip
+#Create a function called tip() that has two parameters named total and percentage.
+#This function should return the amount you should tip given a total and the percentage you want to tip.
+
+def tip(total, percentage):
+    return total * percentage / 100
+
+#3. Bond, James Bond
+#Write a function named introduction() that has two parameters named first_name and last_name.
+#The function should return the last_name, followed by a comma, a space, first_name another space, and finally last_name.
+
+def introduction(first_name, last_name):
+    return(last_name + ", " + first_name + " " + last_name)
+
+#4. Dog Years
+#Some say that every one year of a human’s life is equivalent to seven years of a dog’s life. Write a function named dog_years() that has two parameters named name and age.
+#The function should compute the age in dog years and return the following string:
+#"{name}, you are {age} years old in dog years"
+
+def dog_years(name, age):
+    return(name + ", you are " + str(age * 7) + " years old in dog years")
+
+#5. All Operations
+#Create a function named lots_of_math(). This function should have four parameters named a, b, c, and d. The function should print 3 lines and return 1 value.
+#First, print the sum of a and b.
+#Second, print c minus d.
+#Third, print the first number printed, multiplied by the second number printed.
+#Finally, return the third number printed modulo a.
+
+def lots_of_math(a, b, c, d):
+    print(sum:= a + b)
+    print(difference:= c - d)
+    print(product:= sum * difference)
+    return(product % a)
