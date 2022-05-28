@@ -1,7 +1,14 @@
+#Welcome to The Boredless Tourist, an online application giving you the power to find the parts of the city that fit the pace of your life. 
+#We at The Boredless Tourist run a recommendation engine using Python. 
+#We first evaluate what a person’s interests are 
+#Then we give them recommendations in their area to venues, restaurants, and historical destinations that we think they’ll be engaged by.
+
+#Initialize test data and variables
 destinations = ["Paris, France", "Shanghai, China", "Los Angeles, USA", "São Paulo, Brazil", "Cairo, Egypt"]
 attractions = [[] for city in destinations]
 test_traveler = ['Erin Wilkes', 'Shanghai, China', ['historical site', 'art']]
 
+#Identify each location based on its index in our destinations list
 def get_destination_index(destination):
   destination_index = destinations.index(destination)
   return destination_index
@@ -14,6 +21,7 @@ def get_traveler_location(traveler):
 test_destination_index = get_traveler_location(test_traveler)
 print(test_destination_index)
 
+#Create and maintain a list of attractions
 def add_attraction(destination, attraction):
   destination_index = get_destination_index(destination)
   attractions_for_destination = attractions[destination_index]
@@ -32,6 +40,7 @@ add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]]
 add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 
+#Match traveler's interests with the possible locations in a city.
 def find_attractions(destination, interests):
   destination_index = get_destination_index(destination)
   attractions_in_city = attractions[destination_index]
@@ -48,6 +57,7 @@ def find_attractions(destination, interests):
 test_la_arts = find_attractions("Los Angeles, USA", ["art"])
 print(test_la_arts)
 
+#Connect people with the attractions that they are interested in
 def get_attractions_for_traveler(traveler):
   traveler_destination = traveler[1]
   traveler_interests = traveler[2]
