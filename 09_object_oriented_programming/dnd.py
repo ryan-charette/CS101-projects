@@ -1,18 +1,23 @@
 import random
 
+stat_list = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+
 class Hero:
     def __init__(self, name):
         self.name = name
         self.level = 1
         self.hp = 8
-        # Stats are, in order: Strength, Dexterity, Constitution, Intelligence, Wisdom, & Charisma
         self.stats = []
         self.hit = 0
         self.damage = 8
         self.armor = 13
+    def __repr__(self):
+        print_statement = self.name + ":\n"
+        for stat in range(len(self.stats)):
+            print_statement += "{}: {}\n".format(stat_list[stat], self.stats[stat])
+        return print_statement
     def roll_stats(self):
         rolls = []
-        stats = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
         # Takes the highest 3 of 4 dice rolls and adds them to stats
         for stat in range(6):
             current_roll = [random.randint(1, 6) for i in range(4)]
@@ -20,8 +25,8 @@ class Hero:
             current_roll.pop(0)
             rolls.append(sum(current_roll))
         print("Your rolls are: " + str(rolls))
-        for i in stats:
-            selection = input("Please select which roll to assign as your {} stat.\n".format(i))
+        for stat in stat_list:
+            selection = input("Please select which roll to assign as your {} stat.\n".format(stat))
             try:
                 selection = int(selection)
             except: ValueError
@@ -61,23 +66,26 @@ class Monster:
     def __init__(self, name = "monster", level = 1, size = "medium"):
         self.name = name
         self.level = level
+        self.size = size
         self.hit = self.level // 2
         self.armor = self.hit + 11
-        if size == "small":
+        if self.size == "small":
             self.hp = 8
             self.damage = 4
             for lvl in range(level - 1):
                 self.hp += random.randint(1, 8)
-        elif size == "medium":
+        elif self.size == "medium":
             self.hp = 12
             self.damage = 8
             for lvl in range(level - 1):
                 self.hp += random.randint(1, 12)
-        elif size == "large":
+        elif self.size == "large":
             self.hp = 20
             self.damage = 12
             for lvl in range(level - 1):
                 self.hp += random.randint(1, 20)
+    def __repr__(self):
+        return "The {} is a level {} {} creature.".format(self.name, self.level, self.size)
     def attack(self, hero):
         hit_roll = self.hit + random.randint(1, 20)
         if hit_roll > hero.armor:
@@ -96,6 +104,9 @@ for level in range(7):
     sir_galahad.level_up()
 
 black_knight = Monster("Black Knight", 5, "medium")
+
+print(sir_galahad)
+print(black_knight)
 
 print("The {} approaches!".format(black_knight.name))
 while sir_galahad.hp > 0 and black_knight.hp > 0:
